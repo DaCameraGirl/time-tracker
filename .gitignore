@@ -1,0 +1,4 @@
+time_log.csv
+__pycache__/
+*.pyc
+*.lnk
