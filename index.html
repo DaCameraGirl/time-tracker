@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Time Tracker</title>
+<style>
+:root{--bg:#101214;--panel:#171c20;--ink:#f7f2e9;--muted:#b8c1c7;--line:#303941;--a:#7bc7ff;--b:#68d391;--c:#f2c05d}*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Verdana,system-ui,sans-serif;background:radial-gradient(circle at 16% 12%,rgba(123,199,255,.22),transparent 28%),radial-gradient(circle at 84% 20%,rgba(104,211,145,.16),transparent 30%),linear-gradient(145deg,#101214,#171c20 62%,#14120e);color:var(--ink)}main{width:min(1060px,calc(100vw - 32px));margin:auto;padding:48px 0}.kicker{color:var(--a);font-weight:800;text-transform:uppercase;font-size:12px;letter-spacing:.12em}h1{font-size:clamp(42px,8vw,88px);line-height:.9;margin:0;letter-spacing:0}.lede{font-size:20px;line-height:1.55;color:#e8eef2;max-width:760px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}.btn{border:1px solid var(--line);border-radius:8px;padding:12px 16px;color:var(--ink);background:#20272d;text-decoration:none;font-weight:800}.btn.primary{background:var(--a);color:#07131b}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card,.panel{border:1px solid var(--line);border-radius:8px;background:rgba(23,28,32,.88);padding:20px}.card h2,.panel h2{margin:0 0 10px;font-size:18px}.card p,.panel p{color:var(--muted);line-height:1.55}.clock{font-size:clamp(38px,8vw,76px);font-weight:900;letter-spacing:0;border:1px solid var(--line);border-radius:8px;padding:18px;background:#0b0f12;color:#d7f1ff}pre{white-space:pre-wrap;background:#0b0f12;border:1px solid var(--line);border-radius:8px;padding:16px;color:#d7f1ff;overflow:auto}@media(max-width:760px){main{padding:28px 0}.grid{grid-template-columns:1fr}.lede{font-size:17px}}
+</style>
+</head>
+<body>
+<main>
+<p class="kicker">DaCameraGirl / time-tracker</p>
+<h1>Time Tracker</h1>
+<p class="lede">A simple desktop app to clock in, clock out, and save freelance work sessions automatically so every minute is accounted for.</p>
+<div class="actions"><a class="btn primary" href="https://github.com/DaCameraGirl/time-tracker">Open source</a><a class="btn" href="https://github.com/DaCameraGirl/time-tracker/blob/master/timetracker.pyw">View Python app</a></div>
+<div class="clock" id="clock">00:00:00</div>
+<section class="grid"><article class="card"><h2>One Click</h2><p>Start and stop work sessions with a simple desktop interface.</p></article><article class="card"><h2>Auto Save</h2><p>Every session is written to time_log.csv for history and billing review.</p></article><article class="card"><h2>Stay On Top</h2><p>The tracker is designed to stay visible while other work is happening.</p></article></section>
+<section class="panel"><h2>Run Locally</h2><pre>python timetracker.pyw</pre></section>
+</main>
+<script>setInterval(()=>{const d=new Date();document.getElementById('clock').textContent=[d.getHours(),d.getMinutes(),d.getSeconds()].map(n=>String(n).padStart(2,'0')).join(':')},250);</script>
+</body>
+</html>
